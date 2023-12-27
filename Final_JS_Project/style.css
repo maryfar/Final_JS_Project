@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+#fillter::-webkit-scrollbar {
+    width: 0.4em; 
+  }
+  
+  #fillter::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+  }
+
+
+  .selected{
+    background-color: black;
+    color: white;
+  }
+  
+
+  .divborder{
+    background-color: gray;
+    radius: 20px;
+  }

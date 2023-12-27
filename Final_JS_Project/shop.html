@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+  </head>
+  <body >
+    <div class="flex flex-col items-center justify-center ">
+    <div class="fixed top-0 left-0 right-0  bg-white">
+    <load ="./components/headers/shopheader.html" />
+   <div class="container mx-auto">
+    <div class="bg-gray-100 rounded-md w-[97%] flex justify-start items-center p-1 mx-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+      </svg>
+    <input type="search" placeholder="Search" id="searchQueryMain" class="border-transparent focus:ring-transparent focus:border-transparent  w-full bg-gray-100">
+   
+  </div>
+    <load ="./components/mostPopular/mostPopular.html" />
+  </div>
+</div>
+
+    <div class="flex flex-col items-center sm:px-0  mb-20 mt-[250px]">
+      <load ="./components/createProduct/index.html" />
+ 
+    </div>
+  </div>
+  </div>
+    <div class="fixed left-0 bottom-0 flex justify-center w-full bg-white">
+    <load ="./components/footer/mainfooter.html" />
+  </div>
+
+
+    <script
+      type="module"
+      src="/components/createProduct/createProduct.js"
+    ></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

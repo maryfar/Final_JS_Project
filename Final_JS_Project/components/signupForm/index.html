@@ -1,0 +1,53 @@
+
+  <form class="w-full h-full sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 p-4 flex flex-col justify-center items-center" id="signupForm">
+    <div class="flex flex-col gap-4 w-full items-center">
+    <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+      Sign up to our platform
+    </h5> 
+      <input
+        type="text"
+        name="username"
+        id="username"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full px-4 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        placeholder="username"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        required
+      />
+   
+      <input
+        type="password"
+        name="repeatPassword"
+        id="repeatPassword"
+        placeholder="Repeat your password"
+        placeholder="password"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        required
+      />
+   
+    <a href="/login"  class="cursor-pointer hover:font-bold hover:underline">
+      Login
+    </a>
+    </div>
+  
+    <button
+      type="submit"
+      class=" rounded-[30px] bg-black text-center text-white w-11/12 py-3 px-4 font-normal  mx-6 mt-48"
+    >
+      Sign Up
+    </button>
+  </form>
+  <div
+    class="p-4 mt-6 text-sm text-red-800 rounded-lg bg-red-100 dark:bg-red-800 dark:text-red-400 hidden"
+    role="alert"
+    id="signupFormError"
+  ></div>
+
+
+<script type="module" src="/components/signupForm/signupForm.js"></script>
