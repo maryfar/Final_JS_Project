@@ -34,6 +34,7 @@ export async function gerAllProduct(page = 1) {
 
 export const renderPagination = (total) => {
   paginationButtonsContainer.innerHTML = '';
+  console.log(total);
 
   for (let j = 1; j <= total; j++) {
     const btn = document.createElement("button");
@@ -43,6 +44,7 @@ export const renderPagination = (total) => {
       const clickedBtn = event.target;
       clickedBtn.className = "text-indigo border-t-indigo";
       gerAllProduct(j);
+      
     });
     paginationButtonsContainer.appendChild(btn);
   }

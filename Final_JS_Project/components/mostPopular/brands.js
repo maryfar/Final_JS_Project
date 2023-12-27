@@ -33,6 +33,14 @@ function renderBrands(list) {
   brandDivAll.addEventListener("click", () => {
     gerAllProduct();
     brandDivAll.classList.add("selected");
+    const previouslySelected = document.querySelectorAll(".selected");
+    if (previouslySelected) {
+      previouslySelected.forEach(item => {
+        console.log(item.textContent);
+        if(item.textContent=="All") return;
+        item.classList.remove("selected");
+      });
+    }
   });
   fillter.appendChild(brandDivAll);
 
@@ -41,9 +49,11 @@ function renderBrands(list) {
     brandDiv.classList.add("rounded-3xl", "border", "whitespace-nowrap", "self-center", "border-solid", "border-black", "border-2", "p-2", "w-auto", "px-6", "cursor-pointer");
     brandDiv.textContent = capitalizeFirstLetter(item);
     brandDiv.addEventListener("click", () => {
-      const previouslySelected = document.querySelector(".selected");
+      const previouslySelected = document.querySelectorAll(".selected");
+      brandDivAll.classList.remove("selected");
+
       if (previouslySelected) {
-        previouslySelected.classList.remove("selected");
+        previouslySelected.forEach(item => item.classList.remove("selected"));
       }
       brandDiv.classList.add("selected");
 
