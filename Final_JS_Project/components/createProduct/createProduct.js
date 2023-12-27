@@ -2,8 +2,6 @@
 import axios from "axios";
 
 
-// export let existingSelection = JSON.parse(sessionStorage.getItem("userSelection")) || [];
-
 const usersList = document.querySelector(".users-list");
 const paginationButtonsContainer = document.getElementById("pagination-buttons");
 

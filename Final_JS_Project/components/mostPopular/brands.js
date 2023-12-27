@@ -1,7 +1,7 @@
 import axios from "axios";
 import { listRender, gerAllProduct, renderPagination} from "../createProduct/createProduct.js"; 
 let list = [];
-
+// let paginationButtonsRendered = false;
 async function getAllBrands() {
   const token = window.sessionStorage.getItem("token");
   try {
@@ -68,12 +68,12 @@ async function getProductsByBrand(brand) {
     const token = window.sessionStorage.getItem("token");
     const response = await axios({
       method: "get",
-      url: `http://localhost:3000/sneaker?page=1&limit=10&brands=${brand}`,
+      url: `http://localhost:3000/sneaker?page=1&limit=14&brands=${brand}`,
       headers: { Authorization: `Bearer ${token}` },
     });
     const products = response.data.data;
-    listRender(products);  
-    renderPagination(response.totalPages);
+    listRender(products);
+    renderPagination(response.data.totalPages);
   } catch (error) {
     if (error.response) {
       console.error("Response Data:", error.response.data);

@@ -7,13 +7,13 @@ const paginationButtonsContainer = document.getElementById("pagination-buttons")
 
 let totalPages;
 let list = [];
-
+let paginationButtonsRendered = false;
 export async function gerAllProduct(page = 1) {
   const token = window.sessionStorage.getItem("token");
   try {
     const response = await axios({
       method: "get",
-      url: `http://localhost:3000/sneaker?page=${page}&limit=10`,
+      url: `http://localhost:3000/sneaker?page=${page}&limit=14`,
       headers: { Authorization: `Bearer ${token}` },
     });
     totalPages = response.data.totalPages;
@@ -21,7 +21,11 @@ export async function gerAllProduct(page = 1) {
 
     console.log(list);
     listRender(list);
-    renderPagination(totalPages);
+   
+    if (!paginationButtonsRendered) {
+      renderPagination(totalPages);
+      paginationButtonsRendered = true;
+    }
   } catch (error) {
     if (error.response) {
       console.error("Response Data:", error.response.data);
@@ -87,7 +91,7 @@ async function handleSearch() {
   try {
     const response = await axios({
       method: "get",
-      url: `http://localhost:3000/sneaker?page=1&limit=10&search=${searchValue}`,
+      url: `http://localhost:3000/sneaker?page=1&limit=14&search=${searchValue}`,
       headers: { Authorization: `Bearer ${token}` },
     });
     totalPages = response.data.totalPages;
